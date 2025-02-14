@@ -1,5 +1,7 @@
 
+using ClockWork.Domain.Interfaces;
 using ClockWork.Infrastructure;
+using ClockWork.Infrastructure.Repository;
 
 namespace ClockWork.API
 {
@@ -86,6 +88,7 @@ namespace ClockWork.API
 
         public static void ConfigureDependency(IServiceCollection services)
         {
+            services.AddTransient<ITaskRepository, TaskRepository>();
         }
     }
 }
